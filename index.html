@@ -1,346 +1,155 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cristina Chen | Engineering, Automation & Operations Portfolio</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0f9ff',
-              500: '#0284c7',
-              600: '#0369a1',
-              900: '#0c4a6e'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
-      }
-    };
-  </script>
-  <!-- Google Fonts & Lucide Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    .glassmorphism {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    .dark .glassmorphism {
-      background: rgba(15, 23, 42, 0.75);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cristina Chen | Engineer, Automation and Operations</title>
+<meta name="description" content="Portfolio of Cristina Chen, MSc in Electrical and Computer Engineering (FEUP), Synopsys thesis graded 19/20.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-sky-500 selection:text-white">
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="atmos" aria-hidden="true"></div>
+<div class="moon" aria-hidden="true"></div>
 
-  <!-- Ambient Light Blobs -->
-  <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl dark:bg-sky-600/10"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl dark:bg-indigo-600/10"></div>
-    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl dark:bg-emerald-600/10"></div>
-  </div>
-
-  <!-- Navigation -->
-  <header class="fixed top-0 left-0 right-0 z-50 glassmorphism border-b border-slate-200/60 dark:border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#hero" class="text-lg font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-sky-500"></span>
-        Cristina Chen
-      </a>
-
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#about" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">About</a>
-        <a href="#experience" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Experience</a>
-        <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Projects & Research</a>
-        <a href="#skills" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Skills</a>
-        <a href="#contact" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contact</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
-          <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
-          <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
-        </button>
-        <a href="mailto:cristinachen251@gmail.com" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white transition-all shadow-sm">
-          <span>Get in touch</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Main">
+    <a href="#top" class="font-bold tracking-tight text-lg flex items-center gap-2"><span class="w-3 h-3 bg-[#ffb347] shadow-[0_0_12px_2px_rgba(255,179,71,.7)]"></span>Cristina Chen</a>
+    <div class="hidden md:flex gap-6 text-sm text-[#a9b5cb]">
+      <a class="hover:text-white" href="#experience">Experience</a><a class="hover:text-white" href="#education">Education</a><a class="hover:text-white" href="#projects">Projects</a><a class="hover:text-white" href="#toolkit">Toolkit</a><a class="hover:text-white" href="#interests">Interests</a>
     </div>
-  </header>
+    <div class="flex items-center gap-2">
+      <a href="#contact" class="btn btn-amber !py-2">Get in touch</a>
+      <button id="menuBtn" class="md:hidden btn btn-ghost !p-2" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu" class="w-5 h-5"></i></button>
+    </div>
+  </nav>
+  <div id="menu" class="hidden md:hidden border-t border-[color:var(--line)] px-5 py-3 grid gap-3 text-sm">
+    <a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#toolkit">Toolkit</a><a href="#interests">Interests</a>
+  </div>
+</header>
 
-  <main class="max-w-6xl mx-auto px-6 pt-32 pb-24 space-y-28">
-
-    <!-- Hero Section -->
-    <section id="hero" class="grid lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Electrical & Computer Engineering MSc Graduate
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-          Engineering rigor applied to <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400">automation, operations, & data</span>.
-        </h1>
-        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-          MSc graduate from FEUP with research conducted at Synopsys (Thesis Grade: 19/20). Experienced in Python and Bash workflow automation, high-accuracy financial reconciliation, quantitative modeling, and trilingual communication across multidisciplinary environments.
-        </p>
-
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="#projects" class="px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 font-medium text-sm transition-all shadow-sm flex items-center gap-2">
-            <span>Explore Work</span>
-            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-          </a>
-          <button id="copyEmailBtn" class="px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 font-medium text-sm transition-all flex items-center gap-2">
-            <i data-lucide="copy" class="w-4 h-4 text-slate-500"></i>
-            <span>cristinachen251@gmail.com</span>
-          </button>
-        </div>
-
-        <div class="flex items-center gap-6 pt-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-500"></i> Porto, Portugal</span>
-          <span class="flex items-center gap-1.5"><i data-lucide="languages" class="w-3.5 h-3.5 text-sky-500"></i> Portuguese, Mandarin, English</span>
-        </div>
-      </div>
-
-      <!-- Quick Metrics / Status Card -->
-      <div class="lg:col-span-5">
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xl shadow-slate-200/50 dark:shadow-none space-y-6">
-          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-            </div>
-            <span class="text-xs font-mono text-slate-400">overview.json</span>
-          </div>
-          <div class="font-mono text-xs text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
-            <p><span class="text-sky-500">"degree"</span>: "MSc in Electrical & Computer Engineering",</p>
-            <p><span class="text-sky-500">"institution"</span>: "FEUP + Poznan Tech (Erasmus+)",</p>
-            <p><span class="text-sky-500">"thesis_grade"</span>: "19 / 20 (Synopsys)",</p>
-            <p><span class="text-sky-500">"core_competencies"</span>: [<br>&nbsp;&nbsp;"Process Automation",<br>&nbsp;&nbsp;"Financial Reconciliation",<br>&nbsp;&nbsp;"Advanced Excel & Scripting"<br>],</p>
-            <p><span class="text-sky-500">"languages"</span>: ["Portuguese (Native)", "Mandarin (HSK 5)", "English (C1)"]</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="space-y-8">
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Experience</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Industrial engineering, process automation, and operational management.</p>
-      </div>
-
-      <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-10 pl-6 sm:pl-8">
-        <!-- Item 1 -->
-        <div class="relative">
-          <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-sky-500 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Graduate Research Intern (MSc Thesis — Grade: 19/20)</h3>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Feb 2026 – Jul 2026</span>
-          </div>
-          <p class="text-sm font-medium text-sky-600 dark:text-sky-400 mb-3">Synopsys</p>
-          <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
-            <li>Designed a unified, area-efficient 16nm PVT monitoring subsystem by synthesizing complex research architectures.</li>
-            <li>Conducted multi-corner simulations in Synopsys PrimeWave to ensure robust performance across critical operational edge cases.</li>
-          </ul>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="relative">
-          <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Summer Internship — Automation & Verification</h3>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Jul 2024 – Aug 2024</span>
-          </div>
-          <p class="text-sm font-medium text-sky-600 dark:text-sky-400 mb-3">Synopsys</p>
-          <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
-            <li>Engineered custom scripts in Linux using Python and Bash to streamline verification workflows (LVS), integrating with existing company tools.</li>
-            <li>Collaborated with Tcl scripts to further optimize engineering processes, eliminating manual bottlenecks and cutting verification runtimes.</li>
-          </ul>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="relative">
-          <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-            <h3 class="text-base font-semibold text-slate-900 dark:text-white">Retail Store Operations & Inventory Assistant</h3>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Jun 2017 – Present</span>
-          </div>
-          <p class="text-sm font-medium text-sky-600 dark:text-sky-400 mb-3">Family Business</p>
-          <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside">
-            <li>Balanced registers and reconciled daily cash, card, and digital transactions against revenue with 100% accuracy.</li>
-            <li>Maintained real-time Excel stock records, tracked unit costs and reorder thresholds, and conducted audits to mitigate variances and shrinkage.</li>
-            <li>Audited vendor invoices and delivery receipts against received goods, maintaining reliable internal ledgers.</li>
-          </ul>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="relative">
-          <span class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950"></span>
-          <div class="flex flex-col sm:flex-row sm:items-line sm:justify-between mb-1">
-            <h3 class="text-base font-semibold text-slate-900 dark:text-white">International Technical & Cultural Translator</h3>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Jul 2021</span>
-          </div>
-          <p class="text-sm font-medium text-sky-600 dark:text-sky-400 mb-3">Museu de Serralves</p>
-          <p class="text-sm text-slate-600 dark:text-slate-300">
-            Coordinated multilingual communication between the MTECH Engineering team, the Serralves Foundation, and artist Ai Weiwei’s international studio team during the structural installation of the <em>Pequi Tree</em>, translating real-time between Portuguese, English, and Mandarin.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="space-y-6">
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Education</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Rigorous quantitative foundations and international academic mobility.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-          <span class="text-xs font-mono text-sky-600 dark:text-sky-400">Sep 2024 – Jul 2026</span>
-          <h3 class="font-semibold text-slate-900 dark:text-white mt-1">MSc in Electrical and Computer Engineering</h3>
-          <p class="text-xs text-slate-500 mt-1">Faculdade de Engenharia da Universidade do Porto (FEUP)</p>
-        </div>
-
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-          <span class="text-xs font-mono text-sky-600 dark:text-sky-400">Mar 2025 – Jul 2025</span>
-          <h3 class="font-semibold text-slate-900 dark:text-white mt-1">Erasmus+ International Mobility</h3>
-          <p class="text-xs text-slate-500 mt-1">Poznan University of Technology (Poland)</p>
-        </div>
-
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-          <span class="text-xs font-mono text-sky-600 dark:text-sky-400">Sep 2021 – Jul 2024</span>
-          <h3 class="font-semibold text-slate-900 dark:text-white mt-1">BSc in Electrical and Computer Engineering</h3>
-          <p class="text-xs text-slate-500 mt-1">Faculdade de Engenharia da Universidade do Porto (FEUP)</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills & Languages Section -->
-    <section id="skills" class="space-y-6">
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Technical & Analytical Toolkit</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Tools and frameworks applied across engineering and business operations.</p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
-          <div class="flex items-center gap-2 text-sky-600 dark:text-sky-400">
-            <i data-lucide="code-2" class="w-5 h-5"></i>
-            <h3 class="font-semibold text-slate-900 dark:text-white text-sm">Programming & Automation</h3>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Python</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Bash / Shell</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">C/C++</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">VBA</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Matlab</span>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
-          <div class="flex items-center gap-2 text-sky-600 dark:text-sky-400">
-            <i data-lucide="cpu" class="w-5 h-5"></i>
-            <h3 class="font-semibold text-slate-900 dark:text-white text-sm">EDA & Quantitative Engineering</h3>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Synopsys PrimeWave</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Cadence Virtuoso</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">HSpice</span>
-            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">UDE</span>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
-          <div class="flex items-center gap-2 text-sky-600 dark:text-sky-400">
-            <i data-lucide="globe" class="w-5 h-5"></i>
-            <h3 class="font-semibold text-slate-900 dark:text-white text-sm">Languages & Productivity</h3>
-          </div>
-          <div class="space-y-2 pt-1 text-xs">
-            <div class="flex justify-between"><span class="text-slate-600 dark:text-slate-300">Portuguese</span><span class="text-slate-400 font-medium">Native</span></div>
-            <div class="flex justify-between"><span class="text-slate-600 dark:text-slate-300">Mandarin</span><span class="text-slate-400 font-medium">HSK 5</span></div>
-            <div class="flex justify-between"><span class="text-slate-600 dark:text-slate-300">English</span><span class="text-slate-400 font-medium">CAE (C1)</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-center space-y-6">
-      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Let's Connect</h2>
-      <p class="text-slate-600 dark:text-slate-300 max-w-lg mx-auto text-sm leading-relaxed">
-        Currently open to graduate, operations, and quantitative engineering roles. Feel free to reach out directly via email or phone.
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-        <a href="mailto:cristinachen251@gmail.com" class="px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-medium text-sm transition-all shadow-sm flex items-center gap-2">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          <span>cristinachen251@gmail.com</span>
-        </a>
-        <a href="tel:+351967096568" class="px-5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium text-sm transition-all flex items-center gap-2">
-          <i data-lucide="phone" class="w-4 h-4"></i>
-          <span>+351 967 096 568</span>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500">
-    <p>© 2026 Cristina Chen. Built with HTML, Tailwind CSS, & Vanilla JS.</p>
-  </footer>
-
-  <!-- Toast Notification Element -->
-  <div id="toast" class="fixed bottom-6 right-6 px-4 py-3 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-xs font-semibold shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50">
-    Email address copied to clipboard!
+<main id="top">
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-5 pt-14 pb-20 grid md:grid-cols-[1.15fr_.85fr] gap-10 items-center">
+  <div>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">I turn engineering rigor into workflows that run themselves.</h1>
+    <p class="mt-6 text-lg text-[#b9c4d8] max-w-xl leading-relaxed">MSc in Electrical and Computer Engineering from FEUP. My thesis at Synopsys on 16nm PVT monitoring was graded 19/20. I automate repetitive work with Python and Bash, keep operations accurate, and work fluently in Portuguese, Mandarin and English.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <button id="copyMail" class="btn btn-amber" data-email="cristinachen251@gmail.com"><i data-lucide="copy" class="w-4 h-4"></i>Copy email</button>
+      <a href="#experience" class="btn btn-ghost"><i data-lucide="briefcase" class="w-4 h-4"></i>See my experience</a>
+    </div>
+    <p class="mt-5 text-sm text-[#8d99b0] flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#ffb347]"></i>Porto, Portugal. Open to operations, growth and project coordination roles.</p>
   </div>
 
-  <script>
-    // Lucide Icons
-    lucide.createIcons();
+  <div class="relative">
+    <div class="glow absolute inset-x-0 top-1/4 h-2/3 -z-10" aria-hidden="true"></div>
+    <div id="stage" class="idle" role="img" aria-label="Voxel illustration of Cristina turning to follow your cursor">
+      <div class="shadow"></div>
+      <div id="float"><div id="tilt">
+        <div id="rig"><div id="model"></div></div>
+      </div></div>
+    </div>
+    <p class="text-center text-xs text-[#8d99b0] mt-3">Move your cursor or drag a finger and she will follow.</p>
+  </div>
+</section>
 
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
+<!-- Experience -->
+<section id="experience" class="max-w-6xl mx-auto px-5 py-16">
+  <h2>Professional experience</h2>
+  <p class="lead">From chip level verification to a family shop counter, the common thread is accuracy and automation.</p>
+  <div class="mt-10 grid gap-9 max-w-3xl ml-1">
+    <article class="tl"><h3 class="font-semibold text-lg">Graduate Research Intern, Synopsys</h3><p class="text-sm text-[#8d99b0]">February 2026 to July 2026. MSc thesis, grade 19/20.</p>
+      <ul><li>Designed a unified, area-efficient 16nm PVT monitoring subsystem by synthesizing complex research architectures.</li><li>Ran multi-corner simulations in Synopsys PrimeWave to confirm robust performance at critical operating edge cases.</li></ul></article>
+    <article class="tl"><h3 class="font-semibold text-lg">Summer Verification Intern, Synopsys</h3><p class="text-sm text-[#8d99b0]">July 2024 to August 2024</p>
+      <ul><li>Built Python and Bash automation scripts that removed repetitive workflows and cut cycle times.</li><li>Integrated complex subsystems from technical specifications and ran multi-variable tests for zero-defect reliability.</li></ul></article>
+    <article class="tl"><h3 class="font-semibold text-lg">Retail Operations and Inventory Assistant, Family Business</h3><p class="text-sm text-[#8d99b0]">June 2017 to present</p>
+      <ul><li>Maintained Excel ledgers and models that track inventory levels, sales velocity and stock-out risk.</li><li>Managed daily POS transactions and reconciled cash and digital payments with high accuracy.</li></ul></article>
+    <article class="tl"><h3 class="font-semibold text-lg">Translator, Museu de Serralves</h3><p class="text-sm text-[#8d99b0]">July 2021</p>
+      <ul><li>Coordinated engineering teams, leadership and international partners during a high-stakes project.</li><li>Handled trilingual communication in English, Portuguese and Mandarin and cleared on-site blockers to deliver on time.</li></ul></article>
+  </div>
+</section>
 
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
+<!-- Education -->
+<section id="education" class="max-w-6xl mx-auto px-5 py-16">
+  <h2>Education and mobility</h2>
+  <div class="mt-8 grid md:grid-cols-3 gap-5">
+    <div class="card"><i data-lucide="graduation-cap" class="w-6 h-6 text-[#ffb347]"></i><h3 class="mt-3 font-semibold">MSc in Electrical and Computer Engineering</h3><p class="text-sm text-[#b9c4d8] mt-1">Faculdade de Engenharia da Universidade do Porto</p><p class="text-sm text-[#8d99b0] mt-2">September 2024 to July 2026. Thesis on PVT sensing at Synopsys, graded 19/20.</p></div>
+    <div class="card"><i data-lucide="plane" class="w-6 h-6 text-[#7fd6e6]"></i><h3 class="mt-3 font-semibold">Erasmus+ exchange</h3><p class="text-sm text-[#b9c4d8] mt-1">Poznan University of Technology, Poland</p><p class="text-sm text-[#8d99b0] mt-2">March 2025 to July 2025. A semester of international study and teamwork.</p></div>
+    <div class="card"><i data-lucide="book-open" class="w-6 h-6 text-[#ffb347]"></i><h3 class="mt-3 font-semibold">BSc in Electrical and Computer Engineering</h3><p class="text-sm text-[#b9c4d8] mt-1">Faculdade de Engenharia da Universidade do Porto</p><p class="text-sm text-[#8d99b0] mt-2">September 2021 to July 2024.</p></div>
+  </div>
+</section>
 
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
-    });
+<!-- Projects -->
+<section id="projects" class="max-w-6xl mx-auto px-5 py-16">
+  <h2>Featured projects</h2>
+  <p class="lead">Each one starts with a hard constraint and ends with something that works under pressure.</p>
+  <div class="mt-8 grid lg:grid-cols-3 gap-5">
+    <article class="card flex flex-col gap-3"><h3 class="font-semibold text-lg">16nm PVT monitoring subsystem</h3>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Track process, voltage and temperature variation in a FinFET node while keeping silicon area small.</p>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> A unified subsystem built around a Diode Connected Oscillator architecture, verified across multiple corners. Thesis graded 19/20.</p>
+      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">PrimeWave</span><span class="chip">Virtuoso</span><span class="chip">HSpice</span></div></article>
+    <article class="card flex flex-col gap-3"><h3 class="font-semibold text-lg">Verification automation suite</h3>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Repetitive manual runs slowed multi-variable testing of integrated subsystems.</p>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> Python and Bash scripts that removed the manual steps and shortened cycle times.</p>
+      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">UDE</span></div></article>
+    <article class="card flex flex-col gap-3"><h3 class="font-semibold text-lg">Inventory and sales tracker</h3>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Spot stock-outs early and keep daily cash and card accounts exact in a busy store.</p>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> Dynamic Excel models that show inventory levels and sales velocity at a glance.</p>
+      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">Excel</span><span class="chip">VBA</span></div></article>
+  </div>
+</section>
 
-    // Copy Email to Clipboard
-    const copyEmailBtn = document.getElementById('copyEmailBtn');
-    const toast = document.getElementById('toast');
+<!-- Toolkit -->
+<section id="toolkit" class="max-w-6xl mx-auto px-5 py-16">
+  <h2>Technical toolkit</h2>
+  <div class="mt-8 grid md:grid-cols-3 gap-5">
+    <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5 text-[#ffb347]"></i>Scripting and automation</h3><div class="mt-4 flex flex-wrap gap-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">C/C++</span><span class="chip">VBA</span><span class="chip">Matlab</span></div></div>
+    <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="cpu" class="w-5 h-5 text-[#7fd6e6]"></i>EDA tools</h3><div class="mt-4 flex flex-wrap gap-2"><span class="chip">Synopsys PrimeWave</span><span class="chip">Cadence Virtuoso</span><span class="chip">HSpice</span><span class="chip">UDE</span></div></div>
+    <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="languages" class="w-5 h-5 text-[#ffb347]"></i>Languages</h3><ul class="mt-4 text-sm text-[#b9c4d8] grid gap-2"><li>Portuguese, native</li><li>Mandarin, HSK 5</li><li>English, CAE (C1)</li></ul></div>
+  </div>
+  <p class="mt-5 text-sm text-[#8d99b0]">Also working with Excel, Jira, process mapping, reporting systems and LLM tooling (Claude, ChatGPT, Gemini, Perplexity).</p>
+</section>
 
-    copyEmailBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('cristinachen251@gmail.com').then(() => {
-        toast.classList.remove('opacity-0');
-        setTimeout(() => {
-          toast.classList.add('opacity-0');
-        }, 2200);
-      });
-    });
-  </script>
+<!-- Interests -->
+<section id="interests" class="max-w-6xl mx-auto px-5 py-16">
+  <h2>Life beyond code</h2>
+  <div class="mt-8 grid md:grid-cols-3 gap-5">
+    <div class="card"><i data-lucide="pickaxe" class="w-6 h-6 text-[#ffb347]"></i><h3 class="mt-3 font-semibold">Sandbox gaming</h3><p class="text-sm text-[#b9c4d8] mt-1">Building and exploring open worlds, especially quiet nights with a lantern lit village on the hill.</p></div>
+    <div class="card"><i data-lucide="globe" class="w-6 h-6 text-[#7fd6e6]"></i><h3 class="mt-3 font-semibold">Languages and culture</h3><p class="text-sm text-[#b9c4d8] mt-1">Moving between Portuguese, Mandarin and English, and translating between people who need to understand each other.</p></div>
+    <div class="card"><i data-lucide="palette" class="w-6 h-6 text-[#ffb347]"></i><h3 class="mt-3 font-semibold">Creative making</h3><p class="text-sm text-[#b9c4d8] mt-1">Designing small tools, layouts and visual ideas that make complex things easy to read.</p></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-6xl mx-auto px-5 py-16">
+  <div class="glass rounded-md p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center">
+    <div><h2>Let's build something reliable.</h2><p class="lead">I am looking for an agile operations, growth or project coordination role where analysis and modern AI tools create measurable impact.</p></div>
+    <ul class="grid gap-4 text-[#b9c4d8]">
+      <li><a class="flex items-center gap-3 hover:text-white" href="mailto:cristinachen251@gmail.com"><i data-lucide="mail" class="w-5 h-5 text-[#ffb347]"></i>cristinachen251@gmail.com</a></li>
+      <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-[#ffb347]"></i>Porto, Portugal</li>
+      <li class="flex gap-3 pt-1">
+        <!-- Replace the "#" values with your real profile URLs -->
+        <a class="btn btn-ghost !py-2" href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i>LinkedIn</a>
+        <a class="btn btn-ghost !py-2" href="#" aria-label="GitHub"><i data-lucide="github" class="w-4 h-4"></i>GitHub</a>
+      </li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="max-w-6xl mx-auto px-5 py-10 text-sm text-[#8d99b0] flex flex-wrap justify-between gap-2">
+  <span>&copy; 2026 Cristina Chen</span><span>Built under a Minecraft night sky.</span>
+</footer>
+
+<div id="toast" class="glass rounded px-4 py-2 text-sm flex items-center gap-2" role="status" aria-live="polite"><i data-lucide="check" class="w-4 h-4 text-[#ffb347]"></i><span>Email copied to clipboard</span></div>
+
+<script src="js/ui.js"></script>
+<script src="js/character.js"></script>
+<script src="js/sky.js"></script>
 </body>
 </html>

@@ -49,3 +49,54 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em}
 #toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,2rem);opacity:0;pointer-events:none;transition:.3s;z-index:60}
 #toast.show{transform:translate(-50%,0);opacity:1}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* Smooth page to page transitions where the browser supports them */
+@view-transition{navigation:auto}
+/* Clickable project cards */
+.card-link{display:flex;color:inherit;text-decoration:none;cursor:pointer}
+.card-link .more{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--amber)}
+.card-link .more i{transition:transform .2s}
+.card-link:hover .more i,.card-link:focus-visible .more i{transform:translateX(4px)}
+/* Project detail pages */
+.crumbs{display:flex;align-items:center;gap:.4rem;font-size:.875rem;color:var(--muted)}
+.crumbs a:hover{color:var(--text)}
+.doc-sec{scroll-margin-top:6rem;padding-left:1.25rem;border-left:1px solid var(--line)}
+.doc-sec h2{font-size:1.5rem}
+.doc-sec p{color:#b9c4d8;line-height:1.75;max-width:68ch;margin-top:.75rem}
+.toc{display:grid;gap:.1rem}
+.toc a{display:block;padding:.4rem .75rem;border-left:2px solid var(--line);color:var(--muted);font-size:.875rem;transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--text);border-color:var(--amber)}
+.facts{display:grid;gap:.85rem}
+.facts dt{font-size:.75rem;color:var(--muted)}
+.facts dd{font-size:.875rem;color:#c9d3e6;margin-top:.1rem}
+
+.doc-sec h3{font-size:1.05rem;font-weight:600;margin-top:1.5rem;color:var(--text)}
+.doc-sec ul{list-style:none;margin-top:.75rem;max-width:68ch}
+.doc-sec li{position:relative;padding-left:1.1rem;margin-top:.55rem;color:#b9c4d8;line-height:1.7}
+.doc-sec li::before{content:"";position:absolute;left:0;top:.7rem;width:5px;height:5px;background:var(--mist)}
+.doc-sec .note{margin-top:1.25rem;padding:.9rem 1.1rem;border:1px solid rgba(255,179,71,.35);border-radius:4px;background:rgba(255,179,71,.06);color:#d9cdb8;font-size:.92rem;line-height:1.65;max-width:68ch}
+.doc-table{margin-top:1rem;overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:rgba(14,20,36,.6)}
+.doc-table table{width:100%;min-width:34rem;border-collapse:collapse;font-size:.875rem}
+.doc-table caption{caption-side:bottom;padding:.7rem 1rem;text-align:left;color:var(--muted);font-size:.8rem}
+.doc-table th,.doc-table td{padding:.7rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);color:#c9d3e6}
+.doc-table th{color:var(--text);font-weight:600;background:rgba(127,214,230,.05)}
+.doc-table tr:last-child td{border-bottom:0}
+
+/* Home page only: photographic night scene with a dark veil for readability. Other pages keep the starry sky. */
+.photo-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(90deg,rgba(7,10,19,.72),rgba(7,10,19,.34) 55%,rgba(7,10,19,.46)),linear-gradient(180deg,rgba(7,10,19,.25),rgba(7,10,19,.62)),url(../assets/background.jpg) center/cover no-repeat}
+body[data-page="home"] .moon,body[data-page="home"] .atmos{display:none}
+body[data-page="home"] main h1,body[data-page="home"] main section>div>p,body[data-page="home"] .lead{text-shadow:0 1px 14px rgba(7,10,19,.85)}
+
+/* Games page: every cover sits in the same 2:3 box */
+.game-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-top:1rem}
+.game{margin:0;min-width:0;background:rgba(14,20,36,.62);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.game:hover{border-color:rgba(255,179,71,.5);box-shadow:0 0 28px -6px rgba(255,179,71,.3)}
+.game .cover{aspect-ratio:2/3;overflow:hidden;background:#0d1220}
+.game .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.game:hover .cover img{transform:scale(1.04)}
+.game figcaption{padding:.7rem .8rem .8rem}
+.doc-sec .game h3{font-size:.95rem;font-weight:600;margin-top:0}
+.doc-sec .game p{margin:.15rem 0 0;font-size:.78rem;line-height:1.4;color:var(--muted)}
+.game .rank{display:inline-block;margin-top:.5rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:.15rem .45rem;border:1px solid rgba(255,179,71,.45);color:var(--amber);border-radius:3px}
+@media (prefers-reduced-motion:reduce){.game .cover img{transition:none}}

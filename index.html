@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cristina Chen | Engineer, Automation and Operations</title>
-<meta name="description" content="Portfolio of Cristina Chen, MSc in Electrical and Computer Engineering (FEUP), Synopsys thesis graded 19/20.">
+<title>Cristina Chen | Data Analysis, Automation and Operations</title>
+<meta name="description" content="Portfolio of Cristina Chen, data analyst with an MSc in Electrical and Computer Engineering (FEUP). SQL, Python and retail analytics, with a Synopsys thesis graded 19/20.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -12,38 +12,20 @@
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-<canvas id="sky" aria-hidden="true"></canvas>
-<div class="atmos" aria-hidden="true"></div>
-<div class="moon" aria-hidden="true"></div>
-
-<header class="sticky top-0 z-50 glass">
-  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Main">
-    <a href="#top" class="font-bold tracking-tight text-lg flex items-center gap-2"><span class="w-3 h-3 bg-[#ffb347] shadow-[0_0_12px_2px_rgba(255,179,71,.7)]"></span>Cristina Chen</a>
-    <div class="hidden md:flex gap-6 text-sm text-[#a9b5cb]">
-      <a class="hover:text-white" href="#experience">Experience</a><a class="hover:text-white" href="#education">Education</a><a class="hover:text-white" href="#projects">Projects</a><a class="hover:text-white" href="#toolkit">Toolkit</a><a class="hover:text-white" href="#interests">Interests</a>
-    </div>
-    <div class="flex items-center gap-2">
-      <a href="#contact" class="btn btn-amber !py-2">Get in touch</a>
-      <button id="menuBtn" class="md:hidden btn btn-ghost !p-2" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu" class="w-5 h-5"></i></button>
-    </div>
-  </nav>
-  <div id="menu" class="hidden md:hidden border-t border-[color:var(--line)] px-5 py-3 grid gap-3 text-sm">
-    <a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#toolkit">Toolkit</a><a href="#interests">Interests</a>
-  </div>
-</header>
+<body data-page="home" data-root="">
+<div id="site-header"></div>
 
 <main id="top">
 <!-- Hero -->
 <section class="max-w-6xl mx-auto px-5 pt-14 pb-20 grid md:grid-cols-[1.15fr_.85fr] gap-10 items-center">
   <div>
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">I turn engineering rigor into workflows that run themselves.</h1>
-    <p class="mt-6 text-lg text-[#b9c4d8] max-w-xl leading-relaxed">MSc in Electrical and Computer Engineering from FEUP. My thesis at Synopsys on 16nm PVT monitoring was graded 19/20. I automate repetitive work with Python and Bash, keep operations accurate, and work fluently in Portuguese, Mandarin and English.</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">I turn raw operational data into decisions people can act on.</h1>
+    <p class="mt-6 text-lg text-[#b9c4d8] max-w-xl leading-relaxed">MSc in Electrical and Computer Engineering from FEUP, now focused on data analysis. I build SQL and Python pipelines, analyse retail operations, and bring the rigour of a 19/20 Synopsys thesis to every dataset. I work fluently in Portuguese, Mandarin and English.</p>
     <div class="mt-8 flex flex-wrap gap-3">
       <button id="copyMail" class="btn btn-amber" data-email="cristinachen251@gmail.com"><i data-lucide="copy" class="w-4 h-4"></i>Copy email</button>
       <a href="#experience" class="btn btn-ghost"><i data-lucide="briefcase" class="w-4 h-4"></i>See my experience</a>
     </div>
-    <p class="mt-5 text-sm text-[#8d99b0] flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#ffb347]"></i>Porto, Portugal. Open to operations, growth and project coordination roles.</p>
+    <p class="mt-5 text-sm text-[#8d99b0] flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#ffb347]"></i>Porto, Portugal. Open to data analyst roles.</p>
   </div>
 
   <div class="relative">
@@ -54,21 +36,20 @@
         <div id="rig"><div id="model"></div></div>
       </div></div>
     </div>
-    <p class="text-center text-xs text-[#8d99b0] mt-3">Move your cursor or drag a finger and she will follow.</p>
   </div>
 </section>
 
 <!-- Experience -->
 <section id="experience" class="max-w-6xl mx-auto px-5 py-16">
   <h2>Professional experience</h2>
-  <p class="lead">From chip level verification to a family shop counter, the common thread is accuracy and automation.</p>
+  <p class="lead">From chip level verification to retail analytics, the common thread is accuracy, automation and clear data.</p>
   <div class="mt-10 grid gap-9 max-w-3xl ml-1">
     <article class="tl"><h3 class="font-semibold text-lg">Graduate Research Intern, Synopsys</h3><p class="text-sm text-[#8d99b0]">February 2026 to July 2026. MSc thesis, grade 19/20.</p>
       <ul><li>Designed a unified, area-efficient 16nm PVT monitoring subsystem by synthesizing complex research architectures.</li><li>Ran multi-corner simulations in Synopsys PrimeWave to confirm robust performance at critical operating edge cases.</li></ul></article>
+    <article class="tl"><h3 class="font-semibold text-lg">Data &amp; Operations Analyst, Family Business</h3><p class="text-sm text-[#8d99b0]">August 2025 to present. In the family retail business since June 2017.</p>
+      <ul><li>Building an end to end analytics platform on real store operations: a normalised PostgreSQL schema fed by Python pipelines, with analytical SQL for basket size, average order value, margin per SKU and stockout risk.</li><li>Maintaining Excel models for inventory levels and sales velocity, and managing daily POS transactions and reconciliation of cash and digital payments with high accuracy.</li></ul></article>
     <article class="tl"><h3 class="font-semibold text-lg">Summer Verification Intern, Synopsys</h3><p class="text-sm text-[#8d99b0]">July 2024 to August 2024</p>
-      <ul><li>Built Python and Bash automation scripts that removed repetitive workflows and cut cycle times.</li><li>Integrated complex subsystems from technical specifications and ran multi-variable tests for zero-defect reliability.</li></ul></article>
-    <article class="tl"><h3 class="font-semibold text-lg">Retail Operations and Inventory Assistant, Family Business</h3><p class="text-sm text-[#8d99b0]">June 2017 to present</p>
-      <ul><li>Maintained Excel ledgers and models that track inventory levels, sales velocity and stock-out risk.</li><li>Managed daily POS transactions and reconciled cash and digital payments with high accuracy.</li></ul></article>
+      <ul><li>Built Python, Bash and Tcl scripts from scratch that check LVS results for every cell of a project and report the ones that fail, documented in Jira with the code on GitHub.</li><li>Integrated complex subsystems from technical specifications and ran multi-variable tests for zero-defect reliability.</li></ul></article>
     <article class="tl"><h3 class="font-semibold text-lg">Translator, Museu de Serralves</h3><p class="text-sm text-[#8d99b0]">July 2021</p>
       <ul><li>Coordinated engineering teams, leadership and international partners during a high-stakes project.</li><li>Handled trilingual communication in English, Portuguese and Mandarin and cleared on-site blockers to deliver on time.</li></ul></article>
   </div>
@@ -89,65 +70,66 @@
   <h2>Featured projects</h2>
   <p class="lead">Each one starts with a hard constraint and ends with something that works under pressure.</p>
   <div class="mt-8 grid lg:grid-cols-3 gap-5">
-    <article class="card flex flex-col gap-3"><h3 class="font-semibold text-lg">16nm PVT monitoring subsystem</h3>
-      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Track process, voltage and temperature variation in a FinFET node while keeping silicon area small.</p>
-      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> A unified subsystem built around a Diode Connected Oscillator architecture, verified across multiple corners. Thesis graded 19/20.</p>
-      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">PrimeWave</span><span class="chip">Virtuoso</span><span class="chip">HSpice</span></div></article>
-    <article class="card flex flex-col gap-3"><h3 class="font-semibold text-lg">Verification automation suite</h3>
-      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Repetitive manual runs slowed multi-variable testing of integrated subsystems.</p>
-      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> Python and Bash scripts that removed the manual steps and shortened cycle times.</p>
-      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">UDE</span></div></article>
-    <article class="card flex flex-col gap-3"><h3 class="font-semibold text-lg">Inventory and sales tracker</h3>
-      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Spot stock-outs early and keep daily cash and card accounts exact in a busy store.</p>
-      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> Dynamic Excel models that show inventory levels and sales velocity at a glance.</p>
-      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">Excel</span><span class="chip">VBA</span></div></article>
+    <a class="card card-link flex flex-col gap-3" href="projects/retail-analytics-platform.html"><h3 class="font-semibold text-lg">Retail operations and inventory analytics platform</h3>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Turn raw retail transactions and supply chain events into insight on sales trends, margins, payment behaviour and stockout risk.</p>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> A normalised PostgreSQL database fed by Python pipelines, with analytical SQL for basket size, average order value, margin per SKU and safety stock breaches. Dashboards are the next phase.</p>
+      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">pandas</span></div>
+      <span class="more">Read case study <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+    <a class="card card-link flex flex-col gap-3" href="projects/verification-automation.html"><h3 class="font-semibold text-lg">Verification automation suite</h3>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Engineers needed to see which cells of a project failed LVS without reviewing each one individually.</p>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> Python, Bash and Tcl scripts, written from scratch, that report which cells did not pass LVS, with the code on GitHub and the documentation in Jira.</p>
+      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">Tcl</span></div>
+      <span class="more">Read case study <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+    <a class="card card-link flex flex-col gap-3" href="projects/thesis.html"><h3 class="font-semibold text-lg">Precision On-Chip PVT Sensors</h3>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Challenge.</span> Let a chip sense its own process, voltage and temperature variation instead of relying on external test equipment.</p>
+      <p class="text-sm text-[#b9c4d8]"><span class="text-white font-medium">Result.</span> Three sensor blocks designed and simulated in 16 nm FinFET, including a Diode Connected Oscillator for process sensing, sequenced by a process first controller. Thesis graded 19/20.</p>
+      <div class="mt-auto flex flex-wrap gap-2 pt-2"><span class="chip">PrimeWave</span><span class="chip">Virtuoso</span><span class="chip">HSpice</span></div>
+      <span class="more">Read case study <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
   </div>
 </section>
 
 <!-- Toolkit -->
 <section id="toolkit" class="max-w-6xl mx-auto px-5 py-16">
   <h2>Technical toolkit</h2>
-  <div class="mt-8 grid md:grid-cols-3 gap-5">
-    <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5 text-[#ffb347]"></i>Scripting and automation</h3><div class="mt-4 flex flex-wrap gap-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">C/C++</span><span class="chip">VBA</span><span class="chip">Matlab</span></div></div>
+  <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="database" class="w-5 h-5 text-[#7fd6e6]"></i>Data and analytics</h3><div class="mt-4 flex flex-wrap gap-2"><span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">pandas</span><span class="chip">SQLAlchemy</span><span class="chip">DBeaver</span><span class="chip">Excel</span></div></div>
+    <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5 text-[#ffb347]"></i>Scripting and automation</h3><div class="mt-4 flex flex-wrap gap-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">Tcl</span><span class="chip">C/C++</span><span class="chip">VBA</span><span class="chip">Matlab</span></div></div>
     <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="cpu" class="w-5 h-5 text-[#7fd6e6]"></i>EDA tools</h3><div class="mt-4 flex flex-wrap gap-2"><span class="chip">Synopsys PrimeWave</span><span class="chip">Cadence Virtuoso</span><span class="chip">HSpice</span><span class="chip">UDE</span></div></div>
     <div class="card"><h3 class="font-semibold flex items-center gap-2"><i data-lucide="languages" class="w-5 h-5 text-[#ffb347]"></i>Languages</h3><ul class="mt-4 text-sm text-[#b9c4d8] grid gap-2"><li>Portuguese, native</li><li>Mandarin, HSK 5</li><li>English, CAE (C1)</li></ul></div>
   </div>
-  <p class="mt-5 text-sm text-[#8d99b0]">Also working with Excel, Jira, process mapping, reporting systems and LLM tooling (Claude, ChatGPT, Gemini, Perplexity).</p>
+  <p class="mt-5 text-sm text-[#8d99b0]">Also working with Jira, process mapping, reporting systems and LLM tooling (Claude, ChatGPT, Gemini, Perplexity). Dashboards in Power BI or Tableau are the next phase of my retail analytics project.</p>
 </section>
 
 <!-- Interests -->
 <section id="interests" class="max-w-6xl mx-auto px-5 py-16">
   <h2>Life beyond code</h2>
+  <p class="lead">What I do when I close the laptop. Select a card to read more about each one.</p>
   <div class="mt-8 grid md:grid-cols-3 gap-5">
-    <div class="card"><i data-lucide="pickaxe" class="w-6 h-6 text-[#ffb347]"></i><h3 class="mt-3 font-semibold">Sandbox gaming</h3><p class="text-sm text-[#b9c4d8] mt-1">Building and exploring open worlds, especially quiet nights with a lantern lit village on the hill.</p></div>
-    <div class="card"><i data-lucide="globe" class="w-6 h-6 text-[#7fd6e6]"></i><h3 class="mt-3 font-semibold">Languages and culture</h3><p class="text-sm text-[#b9c4d8] mt-1">Moving between Portuguese, Mandarin and English, and translating between people who need to understand each other.</p></div>
-    <div class="card"><i data-lucide="palette" class="w-6 h-6 text-[#ffb347]"></i><h3 class="mt-3 font-semibold">Creative making</h3><p class="text-sm text-[#b9c4d8] mt-1">Designing small tools, layouts and visual ideas that make complex things easy to read.</p></div>
+    <a class="card card-link flex flex-col gap-3" href="interests/games.html"><i data-lucide="gamepad-2" class="w-6 h-6 text-[#ffb347]"></i><h3 class="font-semibold">Games I’ve played</h3><p class="text-sm text-[#b9c4d8]">Ranked climbs in Valorant and Teamfight Tactics, plus cozy farms and open worlds. Eight games and counting.</p><span class="more">Read more <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+    <a class="card card-link flex flex-col gap-3" href="interests/volleyball.html"><i data-lucide="volleyball" class="w-6 h-6 text-[#7fd6e6]"></i><h3 class="font-semibold">Volleyball</h3><p class="text-sm text-[#b9c4d8]">Middle blocker on the second best sub-17 team in Portugal, and 9th of 32 countries at an international tournament.</p><span class="more">Read more <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+    <a class="card card-link flex flex-col gap-3" href="interests/creative-making.html"><i data-lucide="palette" class="w-6 h-6 text-[#ffb347]"></i><h3 class="font-semibold">Creative making</h3><p class="text-sm text-[#b9c4d8]">Designing small tools, layouts and visual ideas that make complex things easy to read.</p><span class="more">Read more <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact" class="max-w-6xl mx-auto px-5 py-16">
   <div class="glass rounded-md p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center">
-    <div><h2>Let's build something reliable.</h2><p class="lead">I am looking for an agile operations, growth or project coordination role where analysis and modern AI tools create measurable impact.</p></div>
+    <div><h2>Let's turn data into decisions.</h2><p class="lead">I am looking for a data analysis role where SQL, Python and clear reporting turn operational data into measurable impact.</p></div>
     <ul class="grid gap-4 text-[#b9c4d8]">
       <li><a class="flex items-center gap-3 hover:text-white" href="mailto:cristinachen251@gmail.com"><i data-lucide="mail" class="w-5 h-5 text-[#ffb347]"></i>cristinachen251@gmail.com</a></li>
       <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-[#ffb347]"></i>Porto, Portugal</li>
       <li class="flex gap-3 pt-1">
-        <!-- Replace the "#" values with your real profile URLs -->
-        <a class="btn btn-ghost !py-2" href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i>LinkedIn</a>
-        <a class="btn btn-ghost !py-2" href="#" aria-label="GitHub"><i data-lucide="github" class="w-4 h-4"></i>GitHub</a>
+        <a class="btn btn-ghost !py-2" href="https://www.linkedin.com/in/cristinachen01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i>LinkedIn</a>
+        <a class="btn btn-ghost !py-2" href="https://github.com/cristinachn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github" class="w-4 h-4"></i>GitHub</a>
       </li>
     </ul>
   </div>
 </section>
 </main>
 
-<footer class="max-w-6xl mx-auto px-5 py-10 text-sm text-[#8d99b0] flex flex-wrap justify-between gap-2">
-  <span>&copy; 2026 Cristina Chen</span>
-</footer>
+<div id="site-footer"></div>
 
-<div id="toast" class="glass rounded px-4 py-2 text-sm flex items-center gap-2" role="status" aria-live="polite"><i data-lucide="check" class="w-4 h-4 text-[#ffb347]"></i><span>Email copied to clipboard</span></div>
-
+<script src="js/layout.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/character.js"></script>
 <script src="js/sky.js"></script>

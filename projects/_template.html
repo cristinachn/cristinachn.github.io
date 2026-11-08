@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project title | Cristina Chen</title>
+<meta name="description" content="Insert here a one sentence description for search engines and link previews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="project" data-root="../">
+<!-- TEMPLATE: copy this file to projects/your-project-name.html, then edit the title, description, h1, lead, chips, facts, section text and the next project link at the bottom. Files starting with an underscore are not published by GitHub Pages, so this template never appears on the live site. -->
+<div id="site-header"></div>
+
+<main id="top" class="max-w-6xl mx-auto px-5 pt-10 pb-20">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html#projects">Projects</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span aria-current="page">Project title</span></nav>
+
+  <div class="mt-6 max-w-3xl">
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08]">Project title</h1>
+    <p class="mt-5 text-lg text-[#b9c4d8] leading-relaxed">Insert here a one or two sentence summary of the project.</p>
+    <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Tool one</span><span class="chip">Tool two</span></div>
+  </div>
+
+  <div class="mt-12 grid lg:grid-cols-[230px_1fr] gap-10 items-start">
+    <aside class="lg:sticky lg:top-24 grid gap-6">
+      <nav class="toc" aria-label="On this page"><a href="#overview">Overview</a><a href="#problem">Problem Statement</a><a href="#challenges">Technical Challenges</a><a href="#solution">The Solution</a><a href="#takeaways">Key Takeaways</a></nav>
+      <dl class="card facts"><div><dt>Context</dt><dd>Insert here where or why you built it</dd></div><div><dt>Period</dt><dd>Insert here the dates</dd></div><div><dt>Stack</dt><dd>Insert here the tools used</dd></div></dl>
+    </aside>
+    <article class="grid gap-12 max-w-3xl">
+      <section id="overview" class="doc-sec">
+        <h2>Overview</h2>
+        <!-- EDIT: replace the paragraph below with your own text. Add more paragraphs, lists or images as needed. -->
+        <p>Insert here a short summary of the project, its purpose, and who it was built for.</p>
+      </section>
+      <section id="problem" class="doc-sec">
+        <h2>Problem Statement</h2>
+        <!-- EDIT: replace the paragraph below with your own text. Add more paragraphs, lists or images as needed. -->
+        <p>Insert here the problem this project set out to solve and why it mattered.</p>
+      </section>
+      <section id="challenges" class="doc-sec">
+        <h2>Technical Challenges</h2>
+        <!-- EDIT: replace the paragraph below with your own text. Add more paragraphs, lists or images as needed. -->
+        <p>Insert here the main technical obstacles and constraints you had to work within.</p>
+      </section>
+      <section id="solution" class="doc-sec">
+        <h2>The Solution</h2>
+        <!-- EDIT: replace the paragraph below with your own text. Add more paragraphs, lists or images as needed. -->
+        <p>Insert here how you solved it, including the approach, tools, and key design decisions.</p>
+      </section>
+      <section id="takeaways" class="doc-sec">
+        <h2>Key Takeaways</h2>
+        <!-- EDIT: replace the paragraph below with your own text. Add more paragraphs, lists or images as needed. -->
+        <p>Insert here what you learned, the measurable outcomes, and what you would do differently.</p>
+      </section>
+    </article>
+  </div>
+
+  <div class="mt-16 flex flex-wrap justify-between gap-4">
+    <a class="btn btn-ghost" href="../index.html#projects"><i data-lucide="arrow-left" class="w-4 h-4"></i>All projects</a>
+    <a class="btn btn-ghost" href="../index.html#projects">Back to projects<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/sky.js"></script>
+</body>
+</html>

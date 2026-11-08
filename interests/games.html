@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games I’ve played | Cristina Chen</title>
+<meta name="description" content="The games Cristina Chen has played, from ranked Valorant and Teamfight Tactics to Stardew Valley and Minecraft.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="interest" data-root="../">
+<div id="site-header"></div>
+
+<main id="top" class="max-w-6xl mx-auto px-5 pt-10 pb-20">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html#interests">Life beyond code</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span aria-current="page">Games I’ve played</span></nav>
+
+  <div class="mt-6 max-w-3xl">
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08]">Games I’ve played</h1>
+    <p class="mt-5 text-lg text-[#b9c4d8] leading-relaxed">From ranked ladders to quiet farms and open worlds. My peaks are Ascendant 3 in Valorant and Masters in Teamfight Tactics.</p>
+  </div>
+
+  <div class="mt-12 grid lg:grid-cols-[230px_1fr] gap-10 items-start">
+    <aside class="lg:sticky lg:top-24 grid gap-6">
+      <nav class="toc" aria-label="On this page"><a href="#competitive">Competitive games</a><a href="#relaxed">Cozy, co-op and creative</a><a href="#takeaways">What games teach me</a></nav>
+      <dl class="card facts"><div><dt>Valorant peak</dt><dd>Ascendant 3</dd></div><div><dt>TFT peak</dt><dd>Masters</dd></div><div><dt>Games listed</dt><dd>8</dd></div><div><dt>Playing now</dt><dd>Teamfight Tactics</dd></div></dl>
+    </aside>
+    <article class="grid gap-12 max-w-3xl">
+      <section id="competitive" class="doc-sec">
+        <h2>Competitive games</h2>
+        <p>Team shooters and strategy games where decisions, communication and consistency decide the result.</p>
+        <!-- To add a game: copy one figure block, put its cover in assets/games/ as a 2:3 portrait image, and change the name, genre and optional rank. The box keeps every cover the same size. -->
+        <div class="game-grid"><figure class="game"><div class="cover"><img src="../assets/games/valorant.jpg" alt="Valorant cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Valorant</h3><p>Tactical hero shooter</p><span class="rank">Peak: Ascendant 3</span></figcaption></figure><figure class="game"><div class="cover"><img src="../assets/games/tft.jpg" alt="Teamfight Tactics cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Teamfight Tactics</h3><p>Auto battler strategy</p><span class="rank">Peak: Masters</span></figcaption></figure><figure class="game"><div class="cover"><img src="../assets/games/apex-legends.jpg" alt="Apex Legends cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Apex Legends</h3><p>Battle royale shooter</p></figcaption></figure><figure class="game"><div class="cover"><img src="../assets/games/overwatch-2.jpg" alt="Overwatch 2 cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Overwatch 2</h3><p>Team hero shooter</p></figcaption></figure><figure class="game"><div class="cover"><img src="../assets/games/cs-go.jpg" alt="CS:GO cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>CS:GO</h3><p>Tactical shooter</p></figcaption></figure></div>
+      </section>
+      <section id="relaxed" class="doc-sec">
+        <h2>Cozy, co-op and creative</h2>
+        <p>Games I play to unwind, build something or explore with friends.</p>
+        <div class="game-grid"><figure class="game"><div class="cover"><img src="../assets/games/stardew-valley.jpg" alt="Stardew Valley cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Stardew Valley</h3><p>Farming and life simulation</p></figcaption></figure><figure class="game"><div class="cover"><img src="../assets/games/risk-of-rain-2.jpg" alt="Risk of Rain 2 cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Risk of Rain 2</h3><p>Co-op roguelike shooter</p></figcaption></figure><figure class="game"><div class="cover"><img src="../assets/games/minecraft.jpg" alt="Minecraft cover art" width="400" height="600" loading="lazy"></div><figcaption><h3>Minecraft</h3><p>Sandbox building and survival</p></figcaption></figure></div>
+      </section>
+    </article>
+  </div>
+
+  <div class="mt-16 flex flex-wrap justify-between gap-4">
+    <a class="btn btn-ghost" href="creative-making.html"><i data-lucide="arrow-left" class="w-4 h-4"></i>Creative making</a>
+    <a class="btn btn-ghost" href="volleyball.html">Volleyball<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/sky.js"></script>
+</body>
+</html>

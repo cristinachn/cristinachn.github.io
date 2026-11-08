@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retail Operations &amp; Inventory Analytics Platform | Cristina Chen</title>
+<meta name="description" content="End to end retail analytics project: a normalised PostgreSQL database, Python data pipelines and analytical SQL for sales, margins, payment behaviour and stockout risk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="project" data-root="../">
+<div id="site-header"></div>
+
+<main id="top" class="max-w-6xl mx-auto px-5 pt-10 pb-20">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html#projects">Projects</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span aria-current="page">Retail analytics platform</span></nav>
+
+  <div class="mt-6 max-w-3xl">
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08]">End-to-End Retail Operations &amp; Inventory Analytics Platform</h1>
+    <p class="mt-5 text-lg text-[#b9c4d8] leading-relaxed">An end to end analytics project, from raw retail transactions in a normalised PostgreSQL database to the insights that guide purchasing, replenishment and promotions.</p>
+    <div class="mt-5 flex flex-wrap gap-2"><span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">SQLAlchemy</span><span class="chip">DBeaver</span></div>
+  </div>
+
+  <div class="mt-12 grid lg:grid-cols-[230px_1fr] gap-10 items-start">
+    <aside class="lg:sticky lg:top-24 grid gap-6">
+      <nav class="toc" aria-label="On this page"><a href="#overview">Project Overview</a><a href="#architecture">Core Architecture &amp; Tech Stack</a><a href="#competencies">Key Competencies</a><a href="#next">Next Phase</a></nav>
+      <dl class="card facts"><div><dt>Context</dt><dd>Family retail business</dd></div><div><dt>Role</dt><dd>Data &amp; Operations Analyst</dd></div><div><dt>Period</dt><dd>August 2025 to present</dd></div><div><dt>Database</dt><dd>PostgreSQL, 3NF schema</dd></div><div><dt>Stack</dt><dd>Python, SQL, DBeaver</dd></div><div><dt>Status</dt><dd>In progress, dashboards next</dd></div></dl>
+    </aside>
+    <article class="grid gap-12 max-w-3xl">
+      <section id="overview" class="doc-sec">
+        <h2>Project Overview</h2>
+        <!-- EDIT: every paragraph on this page is plain HTML and can be changed freely. -->
+        <p>An end to end data analytics project built on real world retail store operations. The platform takes raw transactional and supply chain events through a normalised relational architecture into business intelligence dashboards, designed to deliver actionable insight into sales trends, product margins, customer payment behaviour and inventory stockout risk.</p>
+        <p>The transactional records are simulated with realistic retail demand patterns, so the whole pipeline can be built, tested and repeated safely. The project is in progress, with dashboards as the next phase.</p>
+        <!-- When the repository is public, remove the comment markers around the next line and put the real address in href.
+        <p class="mt-5"><a class="btn btn-ghost" href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY" target="_blank" rel="noopener"><i data-lucide="github" class="w-4 h-4"></i>View the repository on GitHub</a></p>
+        -->
+      </section>
+
+      <section id="architecture" class="doc-sec">
+        <h2>Core Architecture &amp; Tech Stack</h2>
+        <ul>
+          <li>Database and data modelling: PostgreSQL with a 3NF normalised schema, designed with explicit primary and foreign keys, check constraints and performance indexes.</li>
+          <li>Data engineering and simulation: Python with SQLAlchemy, pandas and Faker pipelines and seeds multi month transactional records, simulates realistic retail demand patterns and automates data ingestion.</li>
+          <li>Database administration: DBeaver for schema deployment, query execution, indexing optimisation and execution plan analysis.</li>
+          <li>Business intelligence (next phase): Power BI or Tableau connected directly through the PostgreSQL connector, to build executive and operational dashboards.</li>
+        </ul>
+        <h3>Data model</h3>
+        <div class="doc-table">
+          <table>
+            <caption>The five tables of the normalised schema.</caption>
+            <thead><tr><th>Table</th><th>What it holds</th></tr></thead>
+            <tbody>
+              <tr><td>suppliers</td><td>The suppliers that provide the store's products</td></tr>
+              <tr><td>products</td><td>The product catalogue (SKUs)</td></tr>
+              <tr><td>transactions</td><td>One header row per customer basket</td></tr>
+              <tr><td>transaction_items</td><td>The line items inside each basket</td></tr>
+              <tr><td>inventory_restocks</td><td>Stock replenishment events</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="competencies" class="doc-sec">
+        <h2>Key Competencies</h2>
+        <ul>
+          <li>Relational database design: structuring retail data across basket headers and line items while enforcing referential integrity and data constraints.</li>
+          <li>Advanced analytical SQL: aggregations, multi table joins, Common Table Expressions (CTEs) and window functions such as RANK(), LAG() and rolling averages, used to answer core business questions.</li>
+          <li>Operational retail metrics: basket size, average order value (AOV), revenue by payment channel (cash, card and MBWay), gross margin per SKU and safety stock threshold breaches.</li>
+          <li>Data pipelines and integration: bridging Python scripting with a production grade SQL database to ingest, clean and manipulate tabular datasets.</li>
+          <li>Executive storytelling: translating raw database queries into visual reporting that guides purchasing schedules, stock replenishment and promotion strategies.</li>
+        </ul>
+      </section>
+
+      <section id="next" class="doc-sec">
+        <h2>Next Phase</h2>
+        <p>The next step is to connect Power BI or Tableau to the PostgreSQL database and build executive and operational dashboards on top of the analytical queries, so that purchasing, replenishment and promotion decisions can be made from the visuals directly.</p>
+      </section>
+    </article>
+  </div>
+
+  <div class="mt-16 flex flex-wrap justify-between gap-4">
+    <a class="btn btn-ghost" href="../index.html#projects"><i data-lucide="arrow-left" class="w-4 h-4"></i>All projects</a>
+    <a class="btn btn-ghost" href="verification-automation.html">Verification automation suite<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/sky.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master's Thesis: Precision On-Chip PVT Sensors | Cristina Chen</title>
+<meta name="description" content="MSc thesis by Cristina Chen on precision on-chip process, voltage and temperature sensors in 16 nm FinFET, developed with Synopsys and graded 19/20.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="project" data-root="../">
+<div id="site-header"></div>
+
+<main id="top" class="max-w-6xl mx-auto px-5 pt-10 pb-20">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html#projects">Projects</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span aria-current="page">Master's Thesis</span></nav>
+
+  <div class="mt-6 max-w-3xl">
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08]">Precision On-Chip PVT Sensors</h1>
+    <p class="mt-5 text-lg text-[#b9c4d8] leading-relaxed">Master's thesis on sensing process, voltage and temperature variation directly on the chip, with three sensor blocks designed and simulated at transistor level in a 16 nm FinFET technology, developed at Synopsys and graded 19/20.</p>
+    <div class="mt-5 flex flex-wrap gap-2"><span class="chip">16 nm FinFET</span><span class="chip">PVT sensing</span><span class="chip">Diode Connected Oscillator</span><span class="chip">Bandgap reference</span><span class="chip">Finite state machine</span><span class="chip">Monte Carlo</span></div>
+  </div>
+
+  <section class="card mt-8 max-w-3xl" aria-labelledby="pdf-h">
+    <div class="flex items-start gap-4">
+      <i data-lucide="file-text" class="w-8 h-8 text-[#ffb347] shrink-0"></i>
+      <div><h2 id="pdf-h" class="!text-xl">Read the full thesis</h2><p class="text-sm text-[#8d99b0] mt-1">Full dissertation, 135 pages, July 2026. View it in a new tab or save a copy.</p></div>
+    </div>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <!-- Replace assets/thesis.pdf with your real file, keeping the same name, and these buttons work as they are. -->
+      <a class="btn btn-amber" href="../assets/thesis.pdf" target="_blank" rel="noopener"><i data-lucide="eye" class="w-4 h-4"></i>View PDF</a>
+      <a class="btn btn-ghost" href="../assets/thesis.pdf" download="Cristina-Chen-MSc-Thesis.pdf"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</a>
+    </div>
+  </section>
+  <div class="mt-12 grid lg:grid-cols-[230px_1fr] gap-10 items-start">
+    <aside class="lg:sticky lg:top-24 grid gap-6">
+      <nav class="toc" aria-label="On this page"><a href="#overview">Overview / Introduction</a><a href="#problem">The Problem</a><a href="#methodology">Methodology &amp; Approach</a><a href="#results">Key Results &amp; Findings</a><a href="#future">Future Work / Next Steps</a></nav>
+      <dl class="card facts"><div><dt>Degree</dt><dd>MSc in Electrical and Computer Engineering, FEUP</dd></div><div><dt>Supervisor</dt><dd>Prof. Vítor Tavares</dd></div><div><dt>Industry host</dt><dd>Synopsys, Graduate Research Intern</dd></div><div><dt>Period</dt><dd>February 2026 to July 2026</dd></div><div><dt>Grade</dt><dd>19/20</dd></div><div><dt>Technology</dt><dd>16 nm FinFET, 0.8 V nominal supply</dd></div></dl>
+    </aside>
+    <article class="grid gap-12 max-w-3xl">
+      <section id="overview" class="doc-sec">
+        <h2>Overview / Introduction</h2>
+        <!-- EDIT: every paragraph on this page is plain HTML and can be changed freely. -->
+        <p>As Internet of Things devices multiply, systems on chip are pushed towards low supply voltages and high power densities, where variations in manufacturing process, supply voltage and temperature (PVT) directly affect performance, yield and reliability. This thesis studies on-chip monitoring techniques and proposes a unified PVT sensing infrastructure for advanced nanometre nodes. The design was developed and validated at transistor level in a 16 nm FinFET technology with a nominal 0.8 V supply.</p>
+        <h3>Goals</h3>
+        <ul>
+          <li>A process sensor based on a Diode Connected Load Ring Oscillator that establishes the silicon corner of each die at start up.</li>
+          <li>A temperature sensor whose PTAT bias core is far less sensitive to supply fluctuations.</li>
+          <li>A digital voltage sensor that reads the supply rail directly.</li>
+          <li>A finite state machine that senses process first and then cycles through temperature and voltage, so the final compensation logic stays simple.</li>
+        </ul>
+        <h3>Why it matters</h3>
+        <p>A chip that can characterise itself depends less on lengthy external test equipment cycles and on worst case guard banding. That supports more efficient semiconductor testing and production, and the work is linked to UN Sustainable Development Goals 9 (industry, innovation and infrastructure) and 12 (responsible consumption and production).</p>
+        <p class="note">Scope: each sensor was designed and verified on its own testbench. The unified top level architecture and its controller are presented as a validated architectural blueprint for future integration, and the full closed loop system was not simulated.</p>
+      </section>
+
+      <section id="problem" class="doc-sec">
+        <h2>The Problem</h2>
+        <p>FinFET nodes bring lower supply voltages, extreme power densities, self heating and localised voltage drops. The traditional answer of designing for the worst case corner, such as the slow process skew at minimum supply and peak temperature, consumes the very efficiency gains these nodes are meant to deliver. At the same time, characterisation and calibration rely on external test equipment, which costs time and capital as production volumes grow.</p>
+        <p>Moving that measurement onto the chip creates a recursive paradox: the sensor suffers from the same variations as the circuit it measures. A ring oscillator frequency changes with process, voltage and temperature together, so a temperature shift can be misread as a process or supply shift and corrupt the data.</p>
+        <h3>Core challenges</h3>
+        <ul>
+          <li>Cross sensitivity between the three measurement axes, which makes readings ambiguous.</li>
+          <li>Reference stability, since sensor precision is limited by the stability of the bandgap reference that biases it.</li>
+          <li>Limited headroom at 0.8 V, which leaves little room for the circuits that normally suppress supply sensitivity.</li>
+          <li>Designs from older nodes that do not transfer unchanged: a 2 stage delay spacing that works in 65 nm violates the timing margin needed for unambiguous encoding at 16 nm.</li>
+        </ul>
+        <h3>Why existing solutions fell short</h3>
+        <p>The ratioed NAND/NOR process sensor from the literature separates corners strongly at nominal conditions, but it proved less robust to temperature and supply variation once frequency normalised sensitivity was considered. A PTAT current source extracted from the bandgap reference showed excessive supply sensitivity, and it could not be fixed by resizing without degrading the reference voltage that the same core supplies to the voltage sensor.</p>
+      </section>
+
+      <section id="methodology" class="doc-sec">
+        <h2>Methodology &amp; Approach</h2>
+        <p>The work follows a standard industrial IC design flow with Synopsys tools, focused on transistor level schematic design and rigorous simulation. Each sensing block was re-derived from first principles at the target node and then benchmarked quantitatively against the corresponding state of the art topology under a common simulation environment.</p>
+        <h3>System architecture</h3>
+        <p>A central finite state machine sequences the sensing. After power up it reads the process sensor once, because the silicon corner of a die is fixed at fabrication and gives a static baseline. Once enabled, it loops through a counter reset, temperature sensing, voltage sensing and a PVT compensation state until it is disabled. With process treated as a static correction, the compensation task reduces mainly to the interaction between voltage and temperature, which lowers the hardware complexity of the compensation engine.</p>
+        <h3>The three sensors</h3>
+        <ul>
+          <li>Process: a Diode Connected Load Ring Oscillator with 21 stage NMOS and PMOS rings. It simplifies the ratioed NAND/NOR delay cells of the state of the art into a single transistor type structure, with delay cell sizing set through DC sweeps.</li>
+          <li>Voltage: a thermometer coded, current starved delay chain based on Chen et al., stabilised by a FinFET native N-well diode bandgap reference. The stage spacing was re-derived for 16 nm through a three step optimisation, ending with an 8 stage interval.</li>
+          <li>Temperature: the ring oscillator front end of Lempel et al., with three candidate PTAT bias sources compared. The composite transistor reference of Hanumantha Rao et al. was selected for its supply noise rejection.</li>
+        </ul>
+        <h3>Verification</h3>
+        <p>Every block was evaluated across the five process corners, over a temperature range of −40 to 120 °C and across supply sweeps, with Monte Carlo analysis for the process sensor. The bandgap results use an ideal operational amplifier model, which is noted as a limitation before tape out.</p>
+      </section>
+
+      <section id="results" class="doc-sec">
+        <h2>Key Results &amp; Findings</h2>
+        <div class="doc-table">
+          <table>
+            <caption>Summary of the three sensing blocks at 0.8 V in 16 nm FinFET, from Chapter 4 of the thesis.</caption>
+            <thead><tr><th>Sensor</th><th>Topology</th><th>Range</th><th>Power</th><th>Key figure</th></tr></thead>
+            <tbody>
+              <tr><td>Process</td><td>Diode Connected Load Ring Oscillator</td><td>−40 to 120 °C</td><td>1.544 mW</td><td>Sensitivity coefficients of 4.01 (NMOS) and 3.48 (PMOS), against 1.34 and 1.54 for the ratioed reference</td></tr>
+              <tr><td>Voltage</td><td>Current starved delay chain with bandgap reference</td><td>−40 to 120 °C</td><td>12.8 µW</td><td>75 mV resolution (5%)</td></tr>
+              <tr><td>Temperature</td><td>Ring oscillator with composite transistor PTAT source</td><td>−40 to 120 °C</td><td>16.32 µW</td><td>0.083 °C per 10 mV supply sensitivity</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Process sensor</h3>
+        <p>The ratioed topology gives a larger raw frequency spread, but once frequency is normalised through the sensitivity coefficients the Diode Connected Load Ring Oscillator is roughly 3 times (NMOS) and 2.3 times (PMOS) more sensitive to its target device. It is also more robust to temperature and supply variation, consumes less power in the same node (1.544 mW against 1.860 mW), and keeps its raw frequency below 1 GHz in all corners. Monte Carlo analysis confirmed that the five corners remain separable at 3σ in the two dimensional frequency plane, although the margin is tighter at the slow corners.</p>
+        <h3>Voltage sensor</h3>
+        <p>The sensor was validated over the full −40 to 120 °C span at 12.8 µW. Its 75 mV resolution is the coarsest of the four designs compared, and the thesis acknowledges this as a limitation rather than a deliberate trade off.</p>
+        <h3>Temperature sensor</h3>
+        <p>Supply rejection in this class of sensor turned out to depend mainly on the PTAT bias source rather than on the oscillator topology. The selected configuration reaches 0.083 °C per 10 mV, the third best of the five designs compared and better than a 7 nm design from the literature, while operating at the lowest supply voltage of the group. It remains about 38% above its own front end with the native source and roughly 3 times above the best design in the comparison.</p>
+        <h3>Overall conclusion</h3>
+        <p>State of the art topologies built for older or larger nodes do not transfer unmodified to 16 nm FinFET, and re-deriving each design at the target node exposed both new limitations and new opportunities. The principal contribution is a complete, simulation validated set of process, voltage and temperature sensing blocks, each re-optimised for the node and benchmarked against the state of the art.</p>
+      </section>
+
+      <section id="future" class="doc-sec">
+        <h2>Future Work / Next Steps</h2>
+        <ul>
+          <li>Close the loop: formalise the digital interface between the three sensor codes, design the correction logic implied by the temperature and voltage states, and validate the full system under the same 16 nm testbench conditions.</li>
+          <li>Improve voltage resolution through finer current starved delay cell sizing or more delay stages, weighed against power and range.</li>
+          <li>Reduce the temperature sensor's residual supply sensitivity with transducer level techniques, such as those used in frequency locked loop and time domain designs.</li>
+          <li>Narrow the slow corner margin of the process sensor, for example with corner dependent sizing or a different stage count for the NMOS and PMOS rings.</li>
+          <li>Replace the ideal operational amplifier in the bandgap reference with a fully sized transistor level design before tape out.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+
+  <div class="mt-16 flex flex-wrap justify-between gap-4">
+    <a class="btn btn-ghost" href="../index.html#projects"><i data-lucide="arrow-left" class="w-4 h-4"></i>All projects</a>
+    <a class="btn btn-ghost" href="retail-analytics-platform.html">Retail analytics platform<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/sky.js"></script>
+</body>
+</html>

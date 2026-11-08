@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification automation suite: LVS checking across a whole project | Cristina Chen</title>
+<meta name="description" content="Python, Bash and Tcl scripts built from scratch during a Synopsys internship to report which cells of a project fail LVS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="project" data-root="../">
+<div id="site-header"></div>
+
+<main id="top" class="max-w-6xl mx-auto px-5 pt-10 pb-20">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html#projects">Projects</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span aria-current="page">Verification automation suite</span></nav>
+
+  <div class="mt-6 max-w-3xl">
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.08]">Verification automation suite</h1>
+    <p class="mt-5 text-lg text-[#b9c4d8] leading-relaxed">Python scripts, built from scratch during my internship at Synopsys, that check the LVS results of every cell in a project so engineers can run one script and see exactly which cells did not pass.</p>
+    <div class="mt-5 flex flex-wrap gap-2"><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">Tcl</span><span class="chip">LVS</span><span class="chip">Linux</span><span class="chip">GitHub</span><span class="chip">Jira</span></div>
+  </div>
+
+  <div class="mt-12 grid lg:grid-cols-[230px_1fr] gap-10 items-start">
+    <aside class="lg:sticky lg:top-24 grid gap-6">
+      <nav class="toc" aria-label="On this page"><a href="#overview">Overview</a><a href="#problem">Problem Statement</a><a href="#challenges">Technical Challenges</a><a href="#solution">The Solution</a><a href="#takeaways">Key Takeaways</a></nav>
+      <dl class="card facts"><div><dt>Context</dt><dd>Synopsys, Summer Verification Intern</dd></div><div><dt>Period</dt><dd>July 2024 to August 2024</dd></div><div><dt>Stack</dt><dd>Python, Bash, Tcl</dd></div><div><dt>Platform</dt><dd>Linux</dd></div><div><dt>Code</dt><dd>GitHub</dd></div><div><dt>Documentation</dt><dd>Jira</dd></div></dl>
+    </aside>
+    <article class="grid gap-12 max-w-3xl">
+      <section id="overview" class="doc-sec">
+        <h2>Overview</h2>
+        <!-- EDIT: every paragraph on this page is plain HTML and can be changed freely. -->
+        <p>During my summer internship at Synopsys I created, from scratch, a set of Python scripts that automate the verification of LVS (layout versus schematic) results across all the cells of a project. An engineer runs the script and immediately knows which cells did not pass the LVS check, instead of having to review each cell individually.</p>
+      </section>
+
+      <section id="problem" class="doc-sec">
+        <h2>Problem Statement</h2>
+        <p>A project contains many cells, and each one has its own LVS result. Checking that status cell by cell is repetitive work, and it makes it easy to lose track of which cells still need attention. The team needed one place that answers a simple question reliably: which cells failed LVS.</p>
+        <p>No automation for this existed when I started, so the task began from nothing and had to be useful to engineers who would run it without knowing how it works inside.</p>
+      </section>
+
+      <section id="challenges" class="doc-sec">
+        <h2>Technical Challenges</h2>
+        <ul>
+          <li>Finding out where and how all the LVS data was exported, since the results had to be located and understood before anything could be automated.</li>
+          <li>Working in a Linux environment, which meant writing Bash scripts to move through the project and drive the flow.</li>
+          <li>Working with Tcl scripts, which I had to learn and use alongside Python and Bash.</li>
+          <li>Building everything from scratch with no template to follow, so design decisions about structure and output were mine to make.</li>
+          <li>Writing something other people could take over, because the work was done during a short internship and would continue after I left.</li>
+        </ul>
+      </section>
+
+      <section id="solution" class="doc-sec">
+        <h2>The Solution</h2>
+        <p>I wrote Python scripts that collect the LVS results for every cell in a project and report which cells did not pass. Bash and Tcl scripts connect that logic to the Linux environment and the exported data. The result is a single command whose output tells the engineer exactly where to look.</p>
+        <h3>Making it maintainable</h3>
+        <ul>
+          <li>All the code was uploaded to GitHub, so changes are tracked and the history is available to whoever continues the work.</li>
+          <li>Everything was documented in Jira, including how the data was exported and how the scripts work, because the project started from scratch and needed a clear starting point for future contributors.</li>
+        </ul>
+      </section>
+
+      <section id="takeaways" class="doc-sec">
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>Tools that start from zero depend on understanding the data first: tracing where results are exported and in what form came before any scripting.</li>
+          <li>Combining Python, Bash and Tcl in one workflow taught me to choose each language for the part of the job it handles best.</li>
+          <li>Version control and written documentation are part of the deliverable, not an extra, especially when someone else will inherit the work.</li>
+          <li>As an intern's first version, it still had plenty of room to improve, and the documentation was written so that others could build on it.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+
+  <div class="mt-16 flex flex-wrap justify-between gap-4">
+    <a class="btn btn-ghost" href="../index.html#projects"><i data-lucide="arrow-left" class="w-4 h-4"></i>All projects</a>
+    <a class="btn btn-ghost" href="thesis.html">Master's Thesis<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/sky.js"></script>
+</body>
+</html>
